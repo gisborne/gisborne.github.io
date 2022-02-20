@@ -5,25 +5,25 @@ import 'package:tuple/tuple.dart';
 
 import 'design.dart';
 
-const List<Info> config = [
-  Info(
+List<MenuInfo> config = [
+  MenuInfo(
     Icons.person,
     'Resume',
     ResumePage()
   ),
-  Info(
+  MenuInfo(
     Icons.video_camera_front_outlined,
     'Writing and Presentations',
     Presentations()
   ),
-  Info(
+  MenuInfo(
     Icons.design_services,
     'Thoughts on Software Design',
     Design()
   ),
 ];
 
-class Info extends Tuple3<IconData, String, Widget>{
-  const Info(IconData a, String b, Widget c):
+class MenuInfo extends Tuple3<IconData, String, Widget>{
+  const MenuInfo(IconData a, String b, Widget c):
         super(a, b, c);
 }

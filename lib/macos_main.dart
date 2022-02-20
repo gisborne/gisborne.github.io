@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resume/macos/macos_menu.dart';
-import 'package:resume/shared/menu.dart';
 import 'package:resume/shared/root.dart';
-import 'macos/home.dart';
 
 void main() {
   runApp(MyApp());

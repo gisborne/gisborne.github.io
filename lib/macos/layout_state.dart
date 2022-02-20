@@ -4,18 +4,16 @@ import 'package:resume/macos/menu_tile.dart';
 import 'macos_menu.dart';
 
 abstract class LayoutState<T extends StatefulWidget> extends State<T> implements ChangedReceiver {
-  late        Widget    page;
   late final  MacOSMenu menu;
 
   LayoutState() {
     menu = MacOSMenu(notifyee: this);
-    page = menu.page;
   }
 
   @override
-  void changed(Widget new_page) {
+  void changed(Widget newPage) {
     setState(() {
-      page = new_page;
+      menu.page = newPage;
     });
   }
 }

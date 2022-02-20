@@ -1,6 +1,6 @@
 import 'package:cupertino_list_tile/cupertino_list_tile.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 
 class MenuTile extends CupertinoListTile {
   final Widget page;
@@ -19,10 +19,11 @@ class MenuTile extends CupertinoListTile {
     Key? key
   }) :
       super(
-      leading: leading,
-      title: Text(title_text),
-      key: key,
-      onTap: () => notifyee.changed(page),
+        leading: leading,
+        title: Text(title_text),
+        key: key,
+        onTap: () => notifyee.changed(page),
+        border: Border.all(width: 0.1, color: Colors.black),
   );
 }
 

@@ -4,11 +4,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:resume/macos/menu_tile.dart';
 import 'package:resume/macos/menu_content.dart';
 import 'package:resume/macos/selected_tile.dart';
-import '../shared/menu.dart';
 
-class MacOSMenu extends Menu {
+class MacOSMenu extends StatefulWidget {
   final ChangedReceiver notifyee;
-  late final List<Widget> children;
+  late final List<MenuTile> children;
   late Widget page;
 
   MacOSMenu({
@@ -16,9 +15,9 @@ class MacOSMenu extends Menu {
      this.notifyee,
     Key? key,
   }):
-    children = menuItems(notifyee),
-    super(key: key) {
-    page = children.first;
+        children = menuItems(notifyee),
+        super(key: key) {
+    page = children.first.page;
   }
 
   @override
@@ -26,21 +25,21 @@ class MacOSMenu extends Menu {
     return _MacOSMenuState(notifyee: notifyee);
   }
 
-  static MenuTile TileFor(Info c, ChangedReceiver notifyee) {
+  static MenuTile TileFor(MenuInfo c, ChangedReceiver notifyee) {
     var tile = MenuTile(
-        leading: Icon(c.item1, size: 32, semanticLabel: c.item2),
-        page: c.item3,
-        title_text: c.item2,
-        notifyee: notifyee
+      leading: Icon(c.item1, size: 32, semanticLabel: c.item2),
+      page: c.item3,
+      title_text: c.item2,
+      notifyee: notifyee
     );
 
     return tile;
   }
 
-  static List<Widget> menuItems(ChangedReceiver notifyee) {
+  static List<MenuTile> menuItems(ChangedReceiver notifyee) {
     return config.map(
       (c) => (TileFor(c, notifyee))
-    ).toList() as List<Widget>;
+    ).toList() as List<MenuTile>;
   }
 }
 
@@ -49,8 +48,7 @@ class _MacOSMenuState extends State<MacOSMenu> {
 
   _MacOSMenuState({
     required
-    this.notifyee,
-    Key? key
+    this.notifyee
   });
 
   @override
@@ -58,7 +56,7 @@ class _MacOSMenuState extends State<MacOSMenu> {
     return ListView(
       padding: EdgeInsets.zero,
       children: widget.children.map(
-        (tile) => tile == widget.page ? show_chosen(tile) : tile
+        (tile) => tile.page == widget.page ? show_chosen(tile) : tile
       ).toList() as List<Widget>
     );
   }
