@@ -1,10 +1,11 @@
 import 'package:cupertino_list_tile/cupertino_list_tile.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 
 class MenuTile extends CupertinoListTile {
   final Widget page;
   final String title_text;
-  final void Function() tapped;
+  final ChangedReceiver notifyee;
 
   MenuTile({
       required
@@ -14,12 +15,17 @@ class MenuTile extends CupertinoListTile {
       required
     this.title_text,
       required
-    this.tapped,
+    this.notifyee,
     Key? key
-  }) : super(
+  }) :
+      super(
       leading: leading,
       title: Text(title_text),
-      onTap: tapped,
-      key: key
+      key: key,
+      onTap: () => notifyee.changed(page),
   );
+}
+
+abstract class ChangedReceiver {
+  void changed(Widget new_page);
 }

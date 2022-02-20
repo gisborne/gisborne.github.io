@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-abstract class Menu extends StatelessWidget {
+abstract class Menu extends StatefulWidget {
   Menu({Key? key}): super(key: key);
-
-  Widget get initialView;
 }

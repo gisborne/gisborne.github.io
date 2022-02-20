@@ -8,12 +8,7 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  static Menu menu = getMenu();
-
-  const MyApp(): _page = menu.
-  Widget _page;
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,38 +16,7 @@ class MyApp extends StatefulWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Root(
-        menu: MacOSMenu(
-          selected: (page) {
-            state.page = page;
-          }
-        )
-      ),
+      home: Root(),
     );
-  }
-
-  @override
-  State<StatefulWidget> createState() => _MyAppState();
-
-  static Menu getMenu() => MacOSMenu();
-}
-
-class _MyAppState extends State<MyApp>{
-  _MyAppState({
-    Key? key,
-      required
-    Widget page
-  }):
-  this._page = page;
-
-  void set page(Widget page) {
-    setState(() {
-      _page = page;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return _page;
   }
 }
