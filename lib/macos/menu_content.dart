@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/macos/presentations.dart';
 import 'package:resume/macos/resume.dart';
+import 'package:resume/macos/writing.dart';
 import 'package:tuple/tuple.dart';
 
 import 'design.dart';
@@ -12,13 +13,18 @@ List<MenuInfo> config = [
     ResumePage()
   ),
   MenuInfo(
-    Icons.video_camera_front_outlined,
-    'Writing and Presentations',
-    Presentations()
+      Icons.video_camera_front_outlined,
+      'Training and Presentations',
+      Presentations()
+  ),
+  MenuInfo(
+      Icons.keyboard,
+      'Writing',
+      Writing()
   ),
   MenuInfo(
     Icons.design_services,
-    'Thoughts on Software Design',
+    'Software Design',
     Design()
   ),
 ];
