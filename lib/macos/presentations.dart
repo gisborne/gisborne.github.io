@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/macos/presentation_content.dart';
-import 'package:resume/macos/video_card.dart';
+import 'package:resume/macos/link_card.dart';
 
 class Presentations extends StatelessWidget {
   Presentations([Key? key]): super(key: key);
 
   final ScrollController _scrollController = ScrollController();
-  final List<VideoCard> rows =
+  final List<LinkCard> rows =
     config.map((c){
-      return VideoCard(
+      return LinkCard(
         image_name: c.item1,
         text: c.item2,
         url: c.item3,

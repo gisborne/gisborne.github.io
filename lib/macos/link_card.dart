@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class VideoCard extends StatelessWidget {
+class LinkCard extends StatelessWidget {
   final Widget image;
   final String text;
   final String url;
 
-  VideoCard({
+  LinkCard({
     Key? key,
       required
     String image_name,
