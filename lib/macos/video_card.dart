@@ -21,7 +21,7 @@ class VideoCard extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.8),
+                color: Colors.grey.withOpacity(0.6),
                 spreadRadius: 3,
                 offset: Offset(2, 2), // changes position of shadow
               ),
@@ -43,7 +43,7 @@ class VideoCard extends StatelessWidget {
             onTap: () => launch(url),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 32.0),
+            padding: EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 32.0),
             child: Text(
               text,
               textAlign: TextAlign.left,
