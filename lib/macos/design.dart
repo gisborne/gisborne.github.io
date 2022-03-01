@@ -5,6 +5,6 @@ class Design extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Design');
+    return const Text('Design');
   }
 }

@@ -10,20 +10,23 @@ class Presentations extends StatelessWidget {
   final List<VideoCard> rows =
     config.map((c){
       return VideoCard(
-          image_name: c.item1,
-          text: c.item2
+        image_name: c.item1,
+        text: c.item2,
+        url: c.item3,
       );
     }).toList();
 
   @override
-  Widget build(BuildContext context) => Scrollbar(
-    isAlwaysShown: true,
-    controller: _scrollController,
-    child: ListView.builder(
+  Widget build(BuildContext context) =>
+    Scrollbar(
+      isAlwaysShown: true,
       controller: _scrollController,
-      itemCount: rows.length,
-      itemBuilder: (context, index) => rows[index],
-    )
-  );
+      child: ListView.builder(
+        padding: EdgeInsets.all(32.0),
+        controller: _scrollController,
+        itemCount: rows.length,
+        itemBuilder: (context, index) => rows[index],
+      )
+    );
 }
 

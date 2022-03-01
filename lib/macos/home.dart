@@ -29,10 +29,6 @@ class Resume
   const Resume(this.title, [Key? key]):
     super(key: key);
 
-  @override
-  void changed(Widget new_page) {
-    // TODO: implement changed
-  }
 
   @override
   State<StatefulWidget> createState() => _ResumeState();
@@ -63,9 +59,9 @@ class _ResumeState
   }
 
   @override
-  void changed(Widget new_page) {
+  void changed(Widget newPage) {
     setState((){
-      _page = new_page;
+      _page = newPage;
     });
   }
 }
