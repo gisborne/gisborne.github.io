@@ -10,12 +10,12 @@ List<MenuInfo> config = [
   MenuInfo(
     Icons.person,
     'Resume',
-    ResumePage()
+    Resume()
   ),
   MenuInfo(
       Icons.video_camera_front_outlined,
       'Training and Presentations',
-      Presentations()
+      Presentations(),
   ),
   MenuInfo(
       Icons.keyboard,
