@@ -4,6 +4,7 @@ import 'package:resume/macos/link_card.dart';
 
 class LinkCardList extends StatelessWidget {
   final List<LinkCard> rows;
+  final ScrollController _scrollController = ScrollController();
 
   LinkCardList({
       required
@@ -18,9 +19,6 @@ class LinkCardList extends StatelessWidget {
         );
       }).toList(),
       super(key: key);
-
-  final ScrollController _scrollController = ScrollController();
-
 
   @override
   Widget build(BuildContext context) =>

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/macos/pdf_widget.dart';
+import 'package:resume/macos/text_style.dart';
 import 'package:styled_text/styled_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -15,15 +16,11 @@ class Writing extends StatelessWidget {
           final String link = attrs['href'] ?? '';
           launch(link);
         },
-        style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue)
+        style: mainStyle,
       )
     },
     textAlign: TextAlign.left,
-    style: TextStyle(
-      fontStyle: FontStyle.italic,
-      fontSize: 24,
-      height: 1,
-    )
+    style: mainStyle.copyWith(fontStyle: FontStyle.italic,)
   );
 
   @override

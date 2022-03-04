@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:resume/macos/text_style.dart';
 import 'package:styled_text/styled_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 typedef Notifyee = void Function(bool);
 class StretchText extends StatefulWidget {
-  final StyledText shortText;
-  final StyledText longText;
+  final Widget shortText;
+  final Widget longText;
 
   StretchText({
       required
@@ -15,9 +16,32 @@ class StretchText extends StatefulWidget {
     String longSource,
     Key? key
   }) :
-      shortText = StyledText(text: shortSource),
-      longText = StyledText(text: longSource),
+      shortText = styledText(shortSource),
+      longText = styledText(longSource),
       super(key: key);
+
+  static Widget styledText(String shortSource, {bool align = false}) {
+    return Expanded(
+      child: StyledText.selectable(
+        text: shortSource,
+        newLineAsBreaks: true,
+        tags: {
+          'link': StyledTextActionTag(
+            (text, attrs) {
+              final String link = attrs['href'] ?? '';
+              launch(link);
+            },
+            style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.blue,
+            ),
+          ),
+          'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
+        },
+        style: mainStyle,
+      ),
+    );
+  }
 
   @override
   State<StatefulWidget> createState() => _StretchTextState();
@@ -27,8 +51,8 @@ class StretchText extends StatefulWidget {
       (String? text, Map<String?, String?> attrs) {
         final String link = attrs['href'] ?? '';
         launch(link);
-      }
-    )
+      },
+    ),
   };
 }
 
@@ -52,6 +76,7 @@ class _StretchTextState extends State<StretchText> {
         _currentText,
       ],
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
     );
   }
 
@@ -78,8 +103,10 @@ class _RotateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return rotated
-      ? IconButton(icon: Icon(CupertinoIcons.chevron_down), onPressed: clicked)
-      : IconButton(icon: Icon(CupertinoIcons.chevron_right), onPressed: clicked);
+    var _icon = rotated
+        ? Icon(CupertinoIcons.chevron_down)
+        : Icon(CupertinoIcons.chevron_right);
+
+    return IconButton(icon: _icon, onPressed: clicked);
   }
 }

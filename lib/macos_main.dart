@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     title: 'Guyren Howe Résumé',
     theme: ThemeData(
       primarySwatch: Colors.blue,
-      textTheme: GoogleFonts.peddanaTextTheme().copyWith(
-
-      ),
+      textTheme: GoogleFonts.peddanaTextTheme(),
     ),
     home: Root(),
   );
