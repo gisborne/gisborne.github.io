@@ -21,26 +21,24 @@ class StretchText extends StatefulWidget {
       super(key: key);
 
   static Widget _styledText(String shortSource) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: StyledText.selectable(
-          text: shortSource,
-          newLineAsBreaks: true,
-          tags: {
-            'link': StyledTextActionTag(
-              (text, attrs) {
-                final String link = attrs['href'] ?? '';
-                launch(link);
-              },
-              style: TextStyle(
-                  color: Colors.indigoAccent,
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: StyledText.selectable(
+        text: shortSource,
+        newLineAsBreaks: true,
+        tags: {
+          'link': StyledTextActionTag(
+            (text, attrs) {
+              final String link = attrs['href'] ?? '';
+              launch(link);
+            },
+            style: TextStyle(
+                color: Colors.indigoAccent,
             ),
-            'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
-          },
-          style: mainStyle,
-        ),
+          ),
+          'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
+        },
+        style: mainStyle,
       ),
     );
   }
@@ -78,14 +76,28 @@ class _StretchTextState extends State<StretchText> {
         _currentText,
       ],
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
     );
   }
 
   void rotate() {
+    Widget first, second;
     setState(() {
       _rotated = !_rotated;
-      _currentText = _rotated ? widget.longText : widget.shortText;
+      if (_rotated) {
+        first = widget.shortText;
+        second = widget.longText;
+      } else {
+        first = widget.longText;
+        second = widget.shortText;
+      }
+        _currentText = Expanded(
+          child: AnimatedCrossFade(
+              duration: const Duration(milliseconds: 200),
+              firstChild: first,
+              secondChild: second,
+              crossFadeState: CrossFadeState.showSecond,
+          ),
+        );
     });
   }
 }
