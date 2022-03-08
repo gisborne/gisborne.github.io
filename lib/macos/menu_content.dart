@@ -14,7 +14,7 @@ List<MenuInfo> config = [
   ),
   MenuInfo(
       Icons.video_camera_front_outlined,
-      'Training and Presentations',
+      'Presentations',
       Presentations(),
   ),
   MenuInfo(

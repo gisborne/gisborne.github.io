@@ -16,13 +16,12 @@ class _WideState extends LayoutState<Wide> implements ChangedReceiver{
     return Material(
       child: Row(
         children: [
-          // use SizedBox to constrain the AppMenu to a fixed width
-          SizedBox(
-            width: 240,
+          Container(
+            width: 250,
             child: menu,
           ),
           // vertical black line as separator
-          Container(width: 0.5, color: Colors.black),// use Expanded to take up the remaining horizontal space
+          Container(width: 0.5, color: Colors.black),
           Expanded(
             child: menu.page
           ),

@@ -8,15 +8,18 @@ import 'package:resume/macos/selected_tile.dart';
 class MacOSMenu extends StatefulWidget {
   final ChangedReceiver notifyee;
   late final List<MenuTile> children;
+  late final MenuTile? tail;
   late Widget page;
 
   MacOSMenu({
       required
-     this.notifyee,
+    this.notifyee,
+    this.tail,
     Key? key,
-  }):
-        children = menuItems(notifyee),
-        super(key: key) {
+  }) :
+      children = menuItems(notifyee),
+      super(key: key)
+  {
     page = children.first.page;
   }
 
@@ -53,12 +56,27 @@ class _MacOSMenuState extends State<MacOSMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    var _regularMenu = Expanded(child: ListView(
       padding: EdgeInsets.zero,
       children: widget.children.map(
         (tile) => tile.page == widget.page ? show_chosen(tile) : tile
       ).toList() as List<Widget>
-    );
+    ));
+
+    if(widget.tail == null) {
+      return _regularMenu;
+    } else {
+      return Container(
+        padding: EdgeInsets.all(4.0),
+        height: double.infinity,
+        child: Column(
+          children: [
+            _regularMenu,
+            widget.tail as Widget
+          ],
+        ),
+      );
+    }
   }
 
   Widget show_chosen(Widget t) {

@@ -16,29 +16,31 @@ class StretchText extends StatefulWidget {
     String longSource,
     Key? key
   }) :
-      shortText = styledText(shortSource),
-      longText = styledText(longSource),
+      shortText = _styledText(shortSource),
+      longText = _styledText(longSource),
       super(key: key);
 
-  static Widget styledText(String shortSource, {bool align = false}) {
+  static Widget _styledText(String shortSource) {
     return Expanded(
-      child: StyledText.selectable(
-        text: shortSource,
-        newLineAsBreaks: true,
-        tags: {
-          'link': StyledTextActionTag(
-            (text, attrs) {
-              final String link = attrs['href'] ?? '';
-              launch(link);
-            },
-            style: TextStyle(
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.blue,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: StyledText.selectable(
+          text: shortSource,
+          newLineAsBreaks: true,
+          tags: {
+            'link': StyledTextActionTag(
+              (text, attrs) {
+                final String link = attrs['href'] ?? '';
+                launch(link);
+              },
+              style: TextStyle(
+                  color: Colors.indigoAccent,
+              ),
             ),
-          ),
-          'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
-        },
-        style: mainStyle,
+            'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
+          },
+          style: mainStyle,
+        ),
       ),
     );
   }

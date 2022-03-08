@@ -3,7 +3,7 @@ import 'package:tuple/tuple.dart';
 List<DesignInfo> config = [
   DesignInfo(
     'Nullable row as a simple synchronization primitive',
-    '''A really nice synchronization primitive arises from noting that <i>creating a row</i> and <i>invoking a function</i> have the same form: both take a set of key-value pairs.<br>A nice synchronization primitive is a table where all fields outside the primary key are nullable.<br>>Multiple asynchronous processes can then contribute multiple values to the row, say through a REST API. Attached to the table can be one or more triggers that specify a subset of the fields in the table, where once all those fields are ground, the trigger runs once, receiving those field values as its arguments.<br>IOW, APIs should support currying and letting the user create new endpoints.''',
+    '''A really nice synchronization primitive arises from noting that <i>creating a row</i> and <i>invoking a function</i> have the same form: both take a set of key-value pairs.<br>A nice synchronization primitive is a table where all fields outside the primary key are nullable.<br>Multiple asynchronous processes can then contribute multiple values to the row, say through a REST API. Attached to the table can be one or more triggers that specify a subset of the fields in the table, where once all those fields are ground, the trigger runs once, receiving those field values as its arguments.<br>IOW, APIs should support currying and letting the user create new endpoints.''',
   ),
   DesignInfo(
       'APIs should support FP',

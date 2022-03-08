@@ -18,16 +18,16 @@ class LinkCard extends StatelessWidget {
     String this.url
   }):
       image = Container(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.6),
-                spreadRadius: 3,
-                offset: Offset(2, 2), // changes position of shadow
-              ),
-            ],
-          )
-,          child: Image(image: AssetImage(image_name))
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.6),
+              spreadRadius: 3,
+              offset: Offset(2, 2), // changes position of shadow
+            ),
+          ],
+        )
+,       child: Image(image: AssetImage(image_name))
       );
   
   @override
