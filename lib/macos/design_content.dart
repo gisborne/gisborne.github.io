@@ -1,6 +1,6 @@
 import 'package:tuple/tuple.dart';
 
-List<DesignInfo> config = [
+const List<DesignInfo> config = [
   DesignInfo(
     'Nullable row as a simple synchronization primitive',
     '''A nice synchronization primitive arises from noting that <i>creating a row</i> and <i>invoking a function</i> have the same form: both take a set of key-value pairs.

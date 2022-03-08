@@ -28,7 +28,7 @@ class Writing extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(32.0, 32.0, 32.0, 32.0),
+          padding: const EdgeInsets.fromLTRB(32.0, 32.0, 32.0, 32.0),
           child: text
         ),
         Expanded(child: PDFWidget(path: path))

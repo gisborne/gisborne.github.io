@@ -1,5 +1,4 @@
 import 'package:enough_platform_widgets/cupertino.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,11 +10,11 @@ class LinkCard extends StatelessWidget {
   LinkCard({
     Key? key,
       required
-    String image_name,
+    String imageName,
       required
-    String this.text,
+    this.text,
       required
-    String this.url
+    this.url
   }):
       image = Container(
         decoration: BoxDecoration(
@@ -23,11 +22,11 @@ class LinkCard extends StatelessWidget {
             BoxShadow(
               color: Colors.grey.withOpacity(0.6),
               spreadRadius: 3,
-              offset: Offset(2, 2), // changes position of shadow
+              offset: const Offset(2, 2), // changes position of shadow
             ),
           ],
         )
-,       child: Image(image: AssetImage(image_name))
+,       child: Image(image: AssetImage(imageName))
       );
   
   @override
@@ -43,7 +42,7 @@ class LinkCard extends StatelessWidget {
             onTap: () => launch(url),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 32.0),
+            padding: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 32.0),
             child: Text(
               text,
               textAlign: TextAlign.left,

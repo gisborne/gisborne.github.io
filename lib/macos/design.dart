@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/shared/stretch_text.dart';
 
@@ -20,7 +19,7 @@ class Design extends StatelessWidget {
       isAlwaysShown: true,
       controller: _scrollController,
       child: ListView.builder(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         controller: _scrollController,
         itemCount: _rows.length,
         itemBuilder: (context, index) => _rows[index],

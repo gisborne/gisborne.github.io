@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 import 'about.dart';
 import 'menu_tile.dart';
@@ -12,7 +11,7 @@ class AboutTile extends MenuTile {
   }) :
       super(
         notifyee: notifyee,
-        leading: Icon(CupertinoIcons.info),
+        leading: const Icon(CupertinoIcons.info),
         title_text: 'About',
         page: About(),
         key: key,
