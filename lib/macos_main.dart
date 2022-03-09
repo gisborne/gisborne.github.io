@@ -5,6 +5,7 @@ import 'package:resume/shared/root.dart';
 
 void main() {
   gatherLicenses();
+
   runApp(MyApp());
 }
 

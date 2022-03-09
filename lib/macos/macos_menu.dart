@@ -47,6 +47,7 @@ class MacOSMenu extends StatefulWidget {
 
 class _MacOSMenuState extends State<MacOSMenu> {
   late final ChangedReceiver notifyee;
+  static final portrait = Image.asset('assets/guyren_portrait.png');
 
   _MacOSMenuState({
     required
@@ -70,6 +71,7 @@ class _MacOSMenuState extends State<MacOSMenu> {
         height: double.infinity,
         child: Column(
           children: [
+            portrait,
             _regularMenu,
             widget.tail as Widget
           ],

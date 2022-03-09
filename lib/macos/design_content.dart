@@ -7,7 +7,7 @@ const List<DesignInfo> config = [
     
 Consider a table where all fields outside the primary key are nullable.
 
-Multiple asynchronous processes can then contribute multiple values to the row, say through a REST API. Attached to the table can be one or more triggers that specify a subset of the fields in the table, where once all those fields are ground, the trigger runs once, receiving those field values as its arguments.
+Multiple asynchronous processes can contribute different column values to the row, say through a REST API. Attached to the table can be one or more triggers that specify a subset of the fields in the table, where once all those fields are ground, the trigger runs once, receiving those field values as its arguments.
 
 IOW, APIs should support currying and letting the user create new endpoints.''',
   ),
@@ -21,7 +21,9 @@ Yes, there are security implications, and yes, we might want to avoid making thi
     'First, there is the data',
     '''Code, apps, everything comes and goes and changes, except the data.
     
-There is nothing you can do in software design that is more enduring, flexible and simple than a good, normalized relational data design. Everything after that is a denormalization. Including the user interface.<br>Software architecture always circles this idea. The latest example is the popularity of <link href="https://en.wikipedia.org/wiki/Functional_reactive_programming">Functional Reactive Programming</link>.'''
+There is nothing you can do in software design that is more enduring, flexible and simple than a good, normalized relational data design. Everything after that is a denormalization. Including the user interface.
+
+Software architecture always circles this idea. The latest example is the popularity of <link href="https://en.wikipedia.org/wiki/Functional_reactive_programming">Functional Reactive Programming</link>.'''
   ),
   DesignInfo(
     'WASI on WASM is going to change everything',
@@ -29,7 +31,7 @@ There is nothing you can do in software design that is more enduring, flexible a
     
 WASM is adding GC, <link href="https://hacks.mozilla.org/2019/08/webassembly-interface-types/">language interoperability</link>, <link href="https://webassembly.org/docs/security/">real sandboxes</link>, and whole new kind of system interface called <link href="https://www.infoq.com/presentations/wasi-system-interface/">WASI</link>.
     
-My Ruby code will be able to call your Rust code in nanoseconds. I don‘t need to trust your Rust code to use it. Supply-chain attacks will be almost non-existent. 
+Within WASM, my Ruby code will be able to call your Rust code in similar time to a Ruby function. I don‘t need to trust your Rust code to use it. Supply-chain attacks will be almost non-existent. 
     
 The economics of code reuse is completely changed when I can write one really good implementation of a fourier transform and then everyone, in every programming language, will be able to use it.
     
@@ -38,6 +40,12 @@ Much of the reason for Virtual Machines is gone.
 When I can safely run your code on my back end, API design will be radically changed.
     
 WASM is going to change <i>everything</i>.'''
+  ),
+  DesignInfo(
+    'These controls are <link href="https://en.wikipedia.org/wiki/StretchText">StretchText</link>s.',
+    '''Originally proposed in Ted Nelson’s <link href="https://en.wikipedia.org/wiki/Project_Xanadu">Project Xanadu</link>, which provided the first detailed description of hypertext. Many ideas from it have still not been adopted today.
+    
+A StretchText allows one text to be expanded into another, so that details can be hidden and revealed. It differs from a traditional outliner in not showing the condensed version at the same time as the expanded.'''
   )
 ];
 

@@ -22,7 +22,7 @@ class PDFWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment(1.0, -1.0),
+      alignment: Alignment.topRight,
         children: <Widget>[
           PdfViewPinch(controller: PdfControllerPinch(document: _page)),
           _DownloadControl(path),
