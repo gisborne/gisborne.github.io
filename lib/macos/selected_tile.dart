@@ -11,7 +11,7 @@ class SelectedTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(12.0), child: tile);
+    return Padding(padding: EdgeInsets.fromLTRB(4.0, 4.0, 0, 0), child: tile);
   }
 }
 
