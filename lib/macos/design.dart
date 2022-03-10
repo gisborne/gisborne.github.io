@@ -8,12 +8,11 @@ class Design extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
   static final _rows =
     [SimpleStyledText('Design thinking, demonstrated through some design ideas.'),
-          ...(config.map(
-              (idea) => StretchText(
-                  shortSource: idea.item1,
-                  longSource: idea.item2
-              )
-            ))];
+      ...(config.map(
+          (idea) => StretchText(
+              shortSource: idea.item1,
+              longSource: idea.item2
+          )))];
 
   @override
 
@@ -27,7 +26,6 @@ class Design extends StatelessWidget {
         itemCount: _rows.length,
         itemBuilder: (context, index) => _rows[index],
       )
-  );
+    );
   }
-
 }

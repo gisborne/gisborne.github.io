@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/macos/menu_tile.dart';
 
@@ -22,7 +21,7 @@ class _WideState extends LayoutState<Wide> implements ChangedReceiver{
           // vertical black line as separator
           Container(width: 0.5, color: Colors.black),
           Expanded(
-            child: menu.page
+            child: page ?? const FlutterLogo()
           ),
         ],
       ),

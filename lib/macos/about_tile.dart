@@ -12,7 +12,7 @@ class AboutTile extends MenuTile {
       super(
         notifyee: notifyee,
         leading: const Icon(CupertinoIcons.info),
-        title_text: 'About',
+        titleText: 'About',
         page: About(),
         key: key,
       );

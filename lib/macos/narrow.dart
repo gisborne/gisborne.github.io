@@ -10,42 +10,42 @@ class Narrow extends StatefulWidget {
   State<StatefulWidget> createState()  => _NarrowState();
 }
 
-class _NarrowState extends LayoutState<Narrow> implements ChangedReceiver{
-  bool _in_menu = true;
+class _NarrowState extends LayoutState<Narrow> implements ChangedReceiver {
+  bool _inMenu = true;
 
   @override
   Widget build(BuildContext _context) {
     return Material(
       child:
-        _in_menu
+        _inMenu
           ? menu
-          : _backable(
-          back_to: () {
-            setState(() {
-              _in_menu = true;
-            });
-          },
-          on: menu.page,
-      ),
+          : _Backable(
+            backTo: () {
+              setState(() {
+                _inMenu = true;
+              });
+            },
+            on: page ?? FlutterLogo(),
+          ),
     );
   }
 
   @override
   void changed(Widget newPage) {
     setState(() {
-      _in_menu = false;
+      _inMenu = false;
       super.changed(newPage);
     });
   }
 }
 
-class _backable extends StatelessWidget {
-  final void Function() back_to;
+class _Backable extends StatelessWidget {
+  final void Function() backTo;
   final Widget on;
 
-  _backable({
+  const _Backable({
       required
-    this.back_to,
+    this.backTo,
       required
     this.on,
     Key? key
@@ -59,8 +59,8 @@ class _backable extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: CupertinoButton(
-            child: Icon(Icons.arrow_back_ios),
-            onPressed: back_to,
+            child: const Icon(Icons.arrow_back_ios),
+            onPressed: backTo,
           ).withPointer()
         ),
         Expanded(child: on),

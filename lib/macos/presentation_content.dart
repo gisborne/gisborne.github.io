@@ -1,6 +1,6 @@
 import 'package:tuple/tuple.dart';
 
-List<PresentationInfo> config = [
+const List<PresentationInfo> config = [
   PresentationInfo(
     'assets/keyword_args_presentation.png',
     'When I gave this presentation at RubyConf 2016, keyword arguments were not used much in APIs, at least in the Ruby world. I like to think I had a part in changing that. Matz, the creator of Ruby, told me he liked the presentation.',

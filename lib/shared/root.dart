@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:resume/macos/path_renderer.dart';
 
 import '../macos/narrow.dart';
 import '../macos/wide.dart';
 
 class Root extends StatelessWidget{
+  static late PathRenderer renderer;
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void show_notice({
+void showNotice({
     required
   BuildContext context,
     required

@@ -32,11 +32,11 @@ class StretchText extends StatefulWidget {
               final String link = attrs['href'] ?? '';
               launch(link);
             },
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.indigoAccent,
             ),
           ),
-          'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
+          'i': StyledTextTag(style: const TextStyle(fontStyle: FontStyle.italic))
         },
         style: mainStyle,
       ),
@@ -62,10 +62,12 @@ class _StretchTextState extends State<StretchText> {
   bool _rotated = false;
   late Widget _currentText;
 
+  @override
   void initState() {
     _closedButton = _RotateButton(rotated: false, clicked: rotate);
     _openButton = _RotateButton(rotated: true, clicked: rotate);
     _currentText = widget.shortText;
+    super.initState();
   }
 
   @override
@@ -106,7 +108,7 @@ class _RotateButton extends StatelessWidget {
   final bool rotated;
   final void Function() clicked;
 
-  _RotateButton({
+  const _RotateButton({
       required
     this.rotated,
       required
@@ -118,8 +120,8 @@ class _RotateButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _icon = rotated
-        ? Icon(CupertinoIcons.chevron_down)
-        : Icon(CupertinoIcons.chevron_right);
+        ? const Icon(CupertinoIcons.chevron_down)
+        : const Icon(CupertinoIcons.chevron_right);
 
     return IconButton(icon: _icon, onPressed: clicked);
   }

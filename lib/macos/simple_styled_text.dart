@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume/macos/text_style.dart';
 import 'package:styled_text/styled_text.dart';
@@ -16,7 +15,7 @@ class SimpleStyledText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: content
     );
   }
@@ -31,11 +30,11 @@ class SimpleStyledText extends StatelessWidget {
             final String link = attrs['href'] ?? '';
             launch(link);
           },
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.indigoAccent,
           ),
         ),
-        'i': StyledTextTag(style: TextStyle(fontStyle: FontStyle.italic))
+        'i': StyledTextTag(style: const TextStyle(fontStyle: FontStyle.italic))
       },
       style: mainStyle,
     );
