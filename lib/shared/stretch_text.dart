@@ -21,24 +21,26 @@ class StretchText extends StatefulWidget {
       super(key: key);
 
   static Widget _styledText(String shortSource) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: StyledText.selectable(
-        text: shortSource,
-        newLineAsBreaks: true,
-        tags: {
-          'link': StyledTextActionTag(
-            (text, attrs) {
-              final String link = attrs['href'] ?? '';
-              launch(link);
-            },
-            style: const TextStyle(
-                color: Colors.indigoAccent,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: StyledText.selectable(
+          text: shortSource,
+          newLineAsBreaks: true,
+          tags: {
+            'link': StyledTextActionTag(
+              (text, attrs) {
+                final String link = attrs['href'] ?? '';
+                launch(link);
+              },
+              style: const TextStyle(
+                  color: Colors.indigoAccent,
+              ),
             ),
-          ),
-          'i': StyledTextTag(style: const TextStyle(fontStyle: FontStyle.italic))
-        },
-        style: mainStyle,
+            'i': StyledTextTag(style: const TextStyle(fontStyle: FontStyle.italic))
+          },
+          style: mainStyle,
+        ),
       ),
     );
   }

@@ -19,7 +19,7 @@ I don’t consider myself a Flutter expert, but I do alright. If your team needs
 
 Tested on MacOS, iOS and Web. Should work on all platforms.
 
-<link href="https://https://github.com/gisborne/resume">github.com/gisborne/resume</link>
+<link href="https://github.com/gisborne/resume">github.com/gisborne/resume</link>
 <link href="mailto:guyren@relevantlogic.com>guyren@relevantlogic.com</link>'''),
       ),
     );

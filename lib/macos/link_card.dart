@@ -42,13 +42,13 @@ class LinkCard extends StatelessWidget {
             onTap: () => launch(url),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 32.0),
+            padding: const EdgeInsets.fromLTRB(8.0, 8.0, 32.0, 32.0),
             child: Text(
               text,
               textAlign: TextAlign.left,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontStyle: FontStyle.italic,
-                fontSize: 24,
+                fontSize: 16,
                 height: 1,
               )
             ),
