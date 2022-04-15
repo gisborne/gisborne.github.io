@@ -17,7 +17,7 @@ I made this because I saw the Flutter team was hiring, and I would be great for 
             
 Also as an exercise and as a change from the humdrum Word resume.
             
-I don’t consider myself a Flutter expert, but I do alright. If your team needs some subset of a web/database person who can be a Flutter expert pretty quickly, and can also do training and writing, get in touch.
+I don’t consider myself a Flutter expert, but I do alright. If your team needs of a web/database person who can become a Flutter expert pretty quickly, and can also do training and writing, get in touch.
 
 Tested on MacOS, iOS and Web. Should work on all platforms.
 
