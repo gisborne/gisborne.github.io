@@ -5,42 +5,41 @@ import 'package:styled_text/styled_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 typedef Notifyee = void Function(bool);
+
 class StretchText extends StatefulWidget {
   final Widget shortText;
   final Widget longText;
 
   StretchText({
-      required
+    required
     String shortSource,
-      required
+    required
     String longSource,
     Key? key
   }) :
-      shortText = _styledText(shortSource),
-      longText = _styledText(longSource),
-      super(key: key);
+        shortText = _styledText(shortSource),
+        longText = _styledText(longSource),
+        super(key: key);
 
   static Widget _styledText(String shortSource) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: StyledText.selectable(
-          text: shortSource,
-          newLineAsBreaks: true,
-          tags: {
-            'link': StyledTextActionTag(
-              (text, attrs) {
-                final String link = attrs['href'] ?? '';
-                launch(link);
-              },
-              style: const TextStyle(
-                  color: Colors.indigoAccent,
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: StyledText.selectable(
+        text: shortSource,
+        newLineAsBreaks: true,
+        tags: {
+          'link': StyledTextActionTag(
+                (text, attrs) {
+              final String link = attrs['href'] ?? '';
+              launch(link);
+            },
+            style: const TextStyle(
+              color: Colors.indigoAccent,
             ),
-            'i': StyledTextTag(style: const TextStyle(fontStyle: FontStyle.italic))
-          },
-          style: mainStyle,
-        ),
+          ),
+          'i': StyledTextTag(style: const TextStyle(fontStyle: FontStyle.italic))
+        },
+        style: mainStyle,
       ),
     );
   }
@@ -50,7 +49,7 @@ class StretchText extends StatefulWidget {
 
   static Map<String, StyledTextTagBase> stretchTextTags = {
     'link': StyledTextActionTag(
-      (String? text, Map<String?, String?> attrs) {
+          (String? text, Map<String?, String?> attrs) {
         final String link = attrs['href'] ?? '';
         launch(link);
       },
@@ -77,7 +76,7 @@ class _StretchTextState extends State<StretchText> {
     return Row(
       children: [
         _rotated ? _openButton : _closedButton,
-        _currentText,
+        Expanded(child: _currentText),
       ],
       crossAxisAlignment: CrossAxisAlignment.start,
     );
@@ -94,13 +93,11 @@ class _StretchTextState extends State<StretchText> {
         first = widget.longText;
         second = widget.shortText;
       }
-        _currentText = Expanded(
-          child: AnimatedCrossFade(
-              duration: const Duration(milliseconds: 200),
-              firstChild: first,
-              secondChild: second,
-              crossFadeState: CrossFadeState.showSecond,
-          ),
+        _currentText = AnimatedCrossFade(
+            duration: const Duration(milliseconds: 200),
+            firstChild: first,
+            secondChild: second,
+            crossFadeState: CrossFadeState.showSecond,
         );
     });
   }
