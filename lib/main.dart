@@ -9,10 +9,14 @@ void main() {
 
   gatherLicenses();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
+final scaffoldKey = GlobalKey<ScaffoldState>();
+
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => MaterialApp(
     title: 'Guyren Howe Résumé',
@@ -20,7 +24,13 @@ class MyApp extends StatelessWidget {
       primarySwatch: Colors.blue,
       textTheme: GoogleFonts.peddanaTextTheme(),
     ),
-    home: Root(),
+    home: Scaffold(
+      key: scaffoldKey,
+        body: DefaultTextHeightBehavior(
+          textHeightBehavior: const TextHeightBehavior(),
+          child: Root()
+        )
+    ),
   );
 }
 

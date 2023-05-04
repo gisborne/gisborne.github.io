@@ -10,11 +10,11 @@ class Wide extends StatefulWidget {
 
 class _WideState extends LayoutState<Wide> implements ChangedReceiver{
   @override
-  Widget build(BuildContext _context) {
-    return Material(
+  Widget build(BuildContext _context)
+    => Material(
       child: Row(
         children: [
-          Container(
+          SizedBox(
             width: 250,
             child: menu,
           ),
@@ -26,5 +26,4 @@ class _WideState extends LayoutState<Wide> implements ChangedReceiver{
         ],
       ),
     );
-  }
 }
