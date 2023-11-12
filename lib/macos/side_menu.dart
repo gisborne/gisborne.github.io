@@ -34,11 +34,9 @@ class _SideMenuState extends State<SideMenu> implements ChangedReceiver {
     children = menuItems(notifyee);
     page = children.first.page;
 
-    if(page == null) {
-      Future.delayed(const Duration(milliseconds: 100), () {
-        notifyee.changed(page);
-      });
-    }
+    Future.delayed(const Duration(milliseconds: 100), () {
+      notifyee.changed(page);
+    });
   }
 
   @override

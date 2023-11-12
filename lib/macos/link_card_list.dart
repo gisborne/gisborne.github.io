@@ -22,7 +22,6 @@ class LinkCardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
     Scrollbar(
-      isAlwaysShown: true,
       controller: _scrollController,
       child: ListView.builder(
         padding: const EdgeInsets.all(32.0),

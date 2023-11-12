@@ -1,4 +1,3 @@
-import 'package:enough_platform_widgets/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -34,12 +33,12 @@ class LinkCard extends StatelessWidget {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CupertinoInkWell(
+          InkWell(
             child: MouseRegion(
               child: image,
               cursor: SystemMouseCursors.click
             ),
-            onTap: () => launch(url),
+            onTap: () => launchUrl(Uri.parse(url)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(8.0, 8.0, 32.0, 32.0),
@@ -48,7 +47,7 @@ class LinkCard extends StatelessWidget {
               textAlign: TextAlign.left,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontStyle: FontStyle.italic,
-                fontSize: 16,
+                fontSize: 24,
                 height: 1,
               )
             ),

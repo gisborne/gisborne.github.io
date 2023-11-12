@@ -17,23 +17,12 @@ I made this because I saw the Flutter team was hiring, and I would be great for 
             
 Also as an exercise and as a change from the humdrum Word resume.
             
-I don’t consider myself a Flutter expert, but I do alright. If your team needs of a web/database person who can become a Flutter expert pretty quickly, and can also do training and writing, get in touch.
+If your team needs of a web/database person who can become a Flutter expert, get in touch.
 
 Tested on MacOS, iOS and Web. Should work on all platforms.
 
 <link href="https://github.com/gisborne/resume">github.com/gisborne/resume</link>
 <link href="mailto:guyren@relevantlogic.com>guyren@relevantlogic.com</link>'''),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: CupertinoButton(
-                child: Text('More…'),
-                onPressed: (() => showAboutDialog(
-                    context: context,
-                  children: [
-                    SimpleStyledText('Written to persuade someone to hire me to do Flutter, because it is the future.')
-                  ])),
-              ),
-            )
           ],
         ),
       ),

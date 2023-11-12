@@ -18,7 +18,6 @@ class Design extends StatelessWidget {
 
     Widget build(BuildContext context) {
     return Scrollbar(
-      isAlwaysShown: true,
       controller: _scrollController,
       child: ListView.builder(
         padding: const EdgeInsets.all(16.0),

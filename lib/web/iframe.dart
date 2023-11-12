@@ -7,9 +7,10 @@ class Iframe extends StatelessWidget {
   final String path;
 
   Iframe({
+    Key? key,
       required
     this.path
-  }) {
+  }) : super(key: key) {
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(path, (int viewId) {
       var iframe = html.IFrameElement();

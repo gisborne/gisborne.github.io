@@ -22,7 +22,14 @@ class MyApp extends StatelessWidget {
     title: 'Guyren Howe Résumé',
     theme: ThemeData(
       primarySwatch: Colors.blue,
-      textTheme: GoogleFonts.peddanaTextTheme(),
+      textTheme: GoogleFonts.peddanaTextTheme(
+        Theme.of(context).textTheme.copyWith(
+          bodySmall: GoogleFonts.peddana(
+            fontSize: 32,
+            height: 1.5,
+          ),
+        ),
+      ),
     ),
     home: Scaffold(
       key: scaffoldKey,

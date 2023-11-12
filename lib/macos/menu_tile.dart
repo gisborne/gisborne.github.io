@@ -1,7 +1,6 @@
-import 'package:cupertino_list_tile/cupertino_list_tile.dart';
 import 'package:flutter/material.dart';
 
-class MenuTile extends CupertinoListTile {
+class MenuTile extends ListTile {
   final Widget page;
   final String titleText;
   final ChangedReceiver notifyee;
@@ -22,7 +21,10 @@ class MenuTile extends CupertinoListTile {
         title: Text(titleText),
         key: key,
         onTap: () => notifyee.changed(page),
-        border: Border.all(width: 0.1, color: Colors.black),
+        titleTextStyle: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+        ),
   );
 }
 
