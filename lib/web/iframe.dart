@@ -14,6 +14,7 @@ class Iframe extends StatelessWidget {
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(path, (int viewId) {
       var iframe = html.IFrameElement();
+      iframe.referrerPolicy = 'no-referrer';
       iframe.src = path;
       return iframe;
     });

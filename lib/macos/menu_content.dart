@@ -5,6 +5,7 @@ import 'package:resume/macos/writing.dart';
 import 'package:tuple/tuple.dart';
 
 import 'design.dart';
+import 'frest_blog.dart';
 
 List<MenuInfo> config = [
   MenuInfo(
@@ -27,6 +28,11 @@ List<MenuInfo> config = [
     'Software Design',
     Design()
   ),
+  const MenuInfo(
+    Icons.web,
+    'Blog',
+    FrestBlog(),
+  )
 ];
 
 class MenuInfo extends Tuple3<IconData, String, Widget>{
