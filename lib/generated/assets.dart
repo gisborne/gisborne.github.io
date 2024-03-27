@@ -3,11 +3,12 @@ class Assets {
   Assets._();
 
   static const String assetsCyc = 'assets/cyc.png';
-  static const String assetsResume = 'assets/guyren-howe-resume.pdf';
-  static const String assetsGuyrenPortrait = 'assets/guyren_portrait.png';
+  static const String assetsGuyrenHoweResume = 'assets/guyren-howe-resume.pdf';
+  static const String assetsGuyrenPortrait = 'assets/guyren_portrait.JPEG';
   static const String assetsGuyrenWritingSample = 'assets/guyren-writing-sample.pdf';
   static const String assetsKeywordArgsPresentation = 'assets/keyword_args_presentation.png';
   static const String assetsLydbPresentation = 'assets/lydb_presentation.png';
+  static const String assetsResume = 'assets/resume.pdf';
   static const String fontsLoraItalicVariableFontWght = 'fonts/Lora-Italic-VariableFont_wght.ttf';
   static const String fontsLoraVariableFontWght = 'fonts/Lora-VariableFont_wght.ttf';
   static const String fontsOFL = 'fonts/OFL.txt';

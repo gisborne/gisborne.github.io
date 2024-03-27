@@ -25,7 +25,7 @@ class _SideMenuState extends State<SideMenu> implements ChangedReceiver {
   late final ChangedReceiver notifyee;
   late final List<MenuTile> children;
   late Widget page;
-  static final portrait = Image.asset('assets/guyren_portrait.png');
+  static final portrait = Image.asset('assets/guyren_portrait.jpg');
 
   _SideMenuState({
     required
